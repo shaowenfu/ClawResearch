@@ -38,7 +38,7 @@ def request_with_retry(method, url, *, headers=None, params=None, json_body=None
     last = None
     for i in range(retries + 1):
         try:
-            resp = requests.request(method, url, headers=headers, params=params, json=json_body, timeout=20)
+            resp = requests.request(method, url, headers=headers, params=params, json=json_body, timeout=12)
             if resp.status_code in (429, 500, 502, 503, 504):
                 last = resp
                 sleep_s = backoff * (2**i)
@@ -211,6 +211,10 @@ def markdown_to_blocks(md_text: str):
 # ---------------- Notion Write ----------------
 
 def clear_page_content(page_id, headers):
+    """Delete all top-level blocks for overwrite mode.
+
+    Note: Notion requires per-block deletes (no batch). We log progress to avoid "looks stuck".
+    """
     blocks_url = f"https://api.notion.com/v1/blocks/{page_id}/children"
     has_more = True
     next_cursor = None
@@ -228,11 +232,16 @@ def clear_page_content(page_id, headers):
         has_more = data.get("has_more", False)
         next_cursor = data.get("next_cursor")
 
-    for block_id in all_block_ids:
-        # Notion delete is per-block
-        request_with_retry("DELETE", f"https://api.notion.com/v1/blocks/{block_id}", headers=headers)
+    total = len(all_block_ids)
+    if total == 0:
+        return 0
 
-    return len(all_block_ids)
+    for idx, block_id in enumerate(all_block_ids, start=1):
+        request_with_retry("DELETE", f"https://api.notion.com/v1/blocks/{block_id}", headers=headers)
+        if idx % 10 == 0 or idx == total:
+            print(f"… deleted {idx}/{total} blocks", flush=True)
+
+    return total
 
 
 def count_page_blocks(page_id, headers):
