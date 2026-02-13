@@ -67,7 +67,7 @@ This will:
 ## Notes / Non-goals
 - Notion does **not** render Markdown directly; we convert Markdown into Notion blocks.
 - Markdown support is best-effort (headings/lists/code/quotes + some inline styles). Tables are currently degraded.
-- **Versioning Topics/**: by default, `Topics/` is **not** versioned to keep the public repo lean. Each topic has a local workspace on disk; commit only the engine code/docs. If you want reproducibility, remove `Topics/` from `.gitignore` (or selectively track parts).
+- **Topics/**: keep **one workspace per topic** under `Topics/` (avoid V2/V3 folders). Re-research should update the same folder. By default this repo versions `Topics/` so results are reproducible; you can ignore `Topics/*/01_RawMaterials/` if you want a leaner history.
 - This repo should not contain secrets. Put API keys in env/config outside git.
 
 ## License

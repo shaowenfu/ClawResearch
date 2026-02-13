@@ -9,8 +9,9 @@ run.lock
 watchdog.lock
 
 # Topics (research workspaces)
-# Default: do NOT version Topics/ to keep the public repo lean.
-Topics/
+# Topics/ is versioned (public research artifacts). Keep ONE workspace per topic (no V2/V3 folders).
+# If you want a lean repo, you can ignore raw materials only:
+# Topics/*/01_RawMaterials/
 
 # OS
 .DS_Store
