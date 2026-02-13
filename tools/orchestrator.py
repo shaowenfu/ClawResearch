@@ -6,6 +6,7 @@ import time
 from pathlib import Path
 
 from utils import load_state, save_state, log
+from pipeline import build_outline, write_section, assemble_report
 
 ROOT = Path("/home/admin/clawd/research")
 LOCK_PATH = ROOT / "run.lock"
@@ -99,13 +100,31 @@ def main():
         topic_dir = init_topic(args.topic)
         wd = start_watchdog()
 
-        # NOTE: This orchestrator currently only enforces scaffolding + delivery.
-        # Actual research steps are still manual/coding-agent driven.
         heartbeat("scaffolded")
 
-        # Mark done only when report exists
-        if not (topic_dir / "report.md").exists():
-            raise RuntimeError("report.md missing; refusing to deliver")
+        # --- Research pipeline (multi-step, non-one-shot) ---
+        # Expect user to populate 01_RawMaterials beforehand for many topics.
+        # For topics that already have materials, we proceed.
+        raw_dir = topic_dir / "01_RawMaterials"
+        if not raw_dir.exists() or not list(raw_dir.glob("*.md")):
+            raise RuntimeError("01_RawMaterials is empty; add sources before running orchestrator")
+
+        outline = build_outline(args.topic, topic_dir)
+
+        # Derive section titles from outline headings (very simple heuristic)
+        section_titles = []
+        for line in outline.splitlines():
+            s = line.strip()
+            if s.startswith("## "):
+                section_titles.append(s[3:].strip())
+        # fallback
+        if not section_titles:
+            section_titles = ["协议与机制", "技术实现与合约", "生态与市场", "风险与争议", "机会与行动建议"]
+
+        for title in section_titles[:6]:
+            write_section(args.topic, topic_dir, title, outline)
+
+        assemble_report(args.topic, topic_dir)
 
         run_delivery(topic_dir, status="Done")
         heartbeat("done", status="done")

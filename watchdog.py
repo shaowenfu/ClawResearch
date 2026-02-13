@@ -5,6 +5,7 @@ import subprocess
 from datetime import datetime
 
 STATE_FILE = os.path.expanduser("~/clawd/research/state.json")
+LOCK_FILE = os.path.expanduser("~/clawd/research/watchdog.lock")
 CHECK_INTERVAL = 60  # seconds
 STALL_THRESHOLD = 300  # seconds (5 minutes)
 
@@ -32,28 +33,45 @@ def wake_moltbot(message):
         print(f"[{datetime.now()}] Failed to wake Moltbot: {e}")
 
 def main():
+    # simple lock to prevent multiple watchdog instances
+    if os.path.exists(LOCK_FILE):
+        print(f"[{datetime.now()}] Watchdog lock exists, refusing to start: {LOCK_FILE}")
+        return
+    try:
+        with open(LOCK_FILE, "w") as f:
+            f.write(str(os.getpid()))
+    except Exception:
+        return
+
     print(f"[{datetime.now()}] Watchdog started. Monitoring {STATE_FILE}...")
-    while True:
-        state = load_state()
-        if state:
-            status = state.get("status")
-            last_updated = float(state.get("last_updated", 0) or 0)
-            now = time.time()
+    try:
+        while True:
+            state = load_state()
+            if state:
+                status = state.get("status")
+                last_updated = float(state.get("last_updated", 0) or 0)
+                now = time.time()
 
-            if status == "running":
-                time_since_update = now - last_updated
+                if status == "running":
+                    time_since_update = now - last_updated
 
-                # Cooldown to avoid spam: only alert at most once per 10 minutes
-                last_alerted = float(state.get("watchdog_last_alerted", 0) or 0)
-                cooldown = 600
+                    # Cooldown to avoid spam: only alert at most once per 10 minutes
+                    last_alerted = float(state.get("watchdog_last_alerted", 0) or 0)
+                    cooldown = 600
 
-                if time_since_update > STALL_THRESHOLD and (now - last_alerted) > cooldown:
-                    msg = f"⚠️ Research Watchdog: Task stalled for {int(time_since_update)}s. Please resume."
-                    wake_moltbot(msg)
-                    state["watchdog_last_alerted"] = now
-                    save_state(state)
+                    if time_since_update > STALL_THRESHOLD and (now - last_alerted) > cooldown:
+                        msg = f"⚠️ Research Watchdog: Task stalled for {int(time_since_update)}s. Please resume."
+                        wake_moltbot(msg)
+                        state["watchdog_last_alerted"] = now
+                        save_state(state)
 
-        time.sleep(CHECK_INTERVAL)
+            time.sleep(CHECK_INTERVAL)
+    finally:
+        try:
+            if os.path.exists(LOCK_FILE):
+                os.remove(LOCK_FILE)
+        except Exception:
+            pass
 
 if __name__ == "__main__":
     main()
