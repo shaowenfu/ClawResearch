@@ -26,9 +26,13 @@ Set env var:
 ```bash
 python3 tools/init_topic.py "My Topic"
 ```
+This will reuse the same workspace directory on every run:
+```
+Topics/<topic-slug>/
+```
 Then put sources into:
 ```
-Topics/YYYYMMDD_My_Topic/01_RawMaterials/
+Topics/<topic-slug>/01_RawMaterials/
 ```
 (as `.md` files; web pages can be fetched and saved there)
 

@@ -26,9 +26,13 @@
 ```bash
 python3 tools/init_topic.py "我的主题"
 ```
+该命令会**复用同一个工作区目录**（同主题永远复用同目录）：
+```
+Topics/<topic-slug>/
+```
 然后把素材放进：
 ```
-Topics/YYYYMMDD_我的主题/01_RawMaterials/
+Topics/<topic-slug>/01_RawMaterials/
 ```
 （建议保存为 `.md`）
 

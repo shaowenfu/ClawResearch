@@ -7,6 +7,24 @@ import time
 from datetime import datetime
 from utils import load_config, load_state, save_state
 
+
+def load_topic_meta(topic_dir: str):
+    path = os.path.join(topic_dir, "topic.json")
+    if not os.path.exists(path):
+        return {}, path
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f), path
+    except Exception:
+        return {}, path
+
+
+def save_topic_meta(meta: dict, path: str):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, indent=2, ensure_ascii=False)
+
+
 NOTION_VERSION = "2022-06-28"
 MAX_TEXT = 2000
 
@@ -236,8 +254,11 @@ def sync_notion(topic_path=None, status=None, report_file=None):
     if not topic_path:
         topic_path = state.get("current_topic_path")
 
+    # per-topic metadata (created/updated time + notion page id)
+    topic_meta, topic_meta_path = load_topic_meta(topic_path)
+
     folder_name = os.path.basename(topic_path)
-    topic_name = folder_name.split("_", 1)[1] if "_" in folder_name else folder_name
+    topic_name = topic_meta.get("title") or (folder_name.split("_", 1)[1] if "_" in folder_name else folder_name)
 
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -252,25 +273,38 @@ def sync_notion(topic_path=None, status=None, report_file=None):
         if os.path.getsize(report_file) < 200:
             raise RuntimeError(f"report too small (<200 bytes), refusing to deliver: {report_file}")
 
-    page_id = state.get("notion_page_id")
+    page_id = topic_meta.get("notion_page_id") or state.get("notion_page_id")
 
     # 1) Create or update metadata
     if not page_id:
+        now_iso = datetime.now().isoformat()
+        created_at = topic_meta.get("created_at") or now_iso
+
         data = {
             "parent": {"database_id": database_id},
             "properties": {
                 "Name": {"title": [{"text": {"content": topic_name}}]},
                 "Status": {"select": {"name": status or "To Do"}},
-                "Last Updated": {"date": {"start": datetime.now().isoformat()}},
+                "Last Updated": {"date": {"start": now_iso}},
+                "Updated At": {"date": {"start": now_iso}},
+                "Created At": {"date": {"start": created_at}},
             },
         }
         resp = request_with_retry("POST", "https://api.notion.com/v1/pages", headers=headers, json_body=data)
         if resp.status_code != 200:
             raise RuntimeError(f"Failed to create page: {resp.text}")
         page_id = resp.json()["id"]
+        # store notion page id per-topic to avoid cross-topic collisions
+        topic_meta["notion_page_id"] = page_id
+        save_topic_meta(topic_meta, topic_meta_path)
+        # also store in global state for convenience
         save_state({"notion_page_id": page_id})
     else:
-        props = {"Last Updated": {"date": {"start": datetime.now().isoformat()}}}
+        now_iso = datetime.now().isoformat()
+        props = {
+            "Last Updated": {"date": {"start": now_iso}},
+            "Updated At": {"date": {"start": now_iso}},
+        }
         if status:
             props["Status"] = {"select": {"name": status}}
         request_with_retry(
@@ -303,6 +337,12 @@ def sync_notion(topic_path=None, status=None, report_file=None):
         n = count_page_blocks(page_id, headers)
         if n is None or n == 0:
             raise RuntimeError("postflight failed: page has 0 blocks")
+
+        # update topic meta timestamps
+        topic_meta["updated_at"] = datetime.now().isoformat()
+        if not topic_meta.get("created_at"):
+            topic_meta["created_at"] = topic_meta["updated_at"]
+        save_topic_meta(topic_meta, topic_meta_path)
 
         print(f"✅ Notion delivery complete. page_id={page_id} cleared={cleared} blocks_now={n}")
 
