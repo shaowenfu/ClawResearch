@@ -28,7 +28,7 @@ python3 tools/init_topic.py "My Topic"
 ```
 Then put sources into:
 ```
-YYYYMMDD_My_Topic/01_RawMaterials/
+Topics/YYYYMMDD_My_Topic/01_RawMaterials/
 ```
 (as `.md` files; web pages can be fetched and saved there)
 
@@ -56,7 +56,7 @@ This will:
 │   └── llm.py               # headless LLM runner (claude/gemini)
 ├── watchdog.py              # stall detector (cooldown + lock)
 ├── config.json              # local config (Notion DB id, root_path)
-└── YYYYMMDD_TopicName/      # per-topic workspaces
+└── Topics/YYYYMMDD_TopicName/      # per-topic workspaces
     ├── 00_Brief/
     ├── 01_RawMaterials/
     ├── 02_Distilled/

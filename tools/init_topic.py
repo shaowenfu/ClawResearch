@@ -8,11 +8,13 @@ def init_topic(topic_name):
     log(f"Initializing topic: {topic_name}")
     config = load_config()
     root_path = config["root_path"]
-    
+    topics_root = os.path.join(root_path, "Topics")
+    os.makedirs(topics_root, exist_ok=True)
+
     # Sanitize topic name
     safe_name = "".join([c if c.isalnum() else "_" for c in topic_name])
     folder_name = f"{get_today_str()}_{safe_name}"
-    full_path = os.path.join(root_path, folder_name)
+    full_path = os.path.join(topics_root, folder_name)
     
     # Create directories
     subdirs = ["00_Brief", "01_RawMaterials", "02_Distilled", "03_Synthesis"]

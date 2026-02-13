@@ -12,7 +12,7 @@ research/
 │   ├── init_topic.py    # CLI to create new research folders
 │   ├── notion_sync.py   # Script to update Notion DB
 │   └── utils.py         # Shared logic
-└── [YYYYMMDD_Topic]/    # Research Data (Created dynamically)
+└── Topics/[YYYYMMDD_Topic]/    # Research Data (Created dynamically)
     ├── 00_Brief/
     ├── 01_RawMaterials/
     ├── 02_Distilled/

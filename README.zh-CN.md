@@ -28,7 +28,7 @@ python3 tools/init_topic.py "我的主题"
 ```
 然后把素材放进：
 ```
-YYYYMMDD_我的主题/01_RawMaterials/
+Topics/YYYYMMDD_我的主题/01_RawMaterials/
 ```
 （建议保存为 `.md`）
 
@@ -56,7 +56,7 @@ python3 tools/orchestrator.py "我的主题"
 │   └── llm.py               # headless LLM runner（claude/gemini）
 ├── watchdog.py              # 卡死检测（cooldown + lock）
 ├── config.json              # 本地配置
-└── YYYYMMDD_TopicName/      # 每个 Topic 的工作区
+└── Topics/YYYYMMDD_TopicName/      # 每个 Topic 的工作区
     ├── 00_Brief/
     ├── 01_RawMaterials/
     ├── 02_Distilled/
