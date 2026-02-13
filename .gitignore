@@ -8,9 +8,9 @@ state.json
 run.lock
 watchdog.lock
 
-# Topic artifacts can be large; keep in repo if you want reproducibility.
-# If you prefer not to version research outputs, uncomment:
-# 20*/
+# Topics (research workspaces)
+# Default: do NOT version Topics/ to keep the public repo lean.
+Topics/
 
 # OS
 .DS_Store

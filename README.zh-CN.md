@@ -67,7 +67,7 @@ python3 tools/orchestrator.py "我的主题"
 ## 说明 / 边界
 - Notion 不会自动渲染 Markdown；我们是把 Markdown 解析成 Notion Blocks。
 - Markdown 渲染目前是“够用优先”：标题/列表/代码块/引用 + 部分行内格式；表格暂时降级。
-- **Topics/ 是否版本化**：默认会把 `Topics/` 下的 Topic 工作区提交到 git（便于复现：raw → distilled → report）。如果你希望仓库更轻量，可以在 `.gitignore` 中忽略 `Topics/` 的部分目录（例如只忽略 `01_RawMaterials/` 或忽略整个 `Topics/`）。
+- **Topics/ 是否版本化**：默认**不**把 `Topics/` 提交到 git（保持 Public 仓库精简）。每个主题只有一个本地工作区，仓库主要版本化引擎代码与文档；如需可复现，可自行从 `.gitignore` 移除 `Topics/`（或选择性追踪部分目录）。
 - 仓库中不要提交任何密钥。API Key 放在环境变量/本地配置。
 
 ## License
