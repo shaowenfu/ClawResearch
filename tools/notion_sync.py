@@ -316,14 +316,19 @@ def sync_notion(topic_path=None, status=None, report_file=None):
 
     # 2) Overwrite content
     if report_file:
+        print(f"🧹 clearing page content... page_id={page_id}", flush=True)
         cleared = clear_page_content(page_id, headers)
+        print(f"✨ cleared blocks={cleared}", flush=True)
+
         with open(report_file, "r", encoding="utf-8") as f:
             md = f.read()
         blocks = markdown_to_blocks(md)
         if not blocks:
             raise RuntimeError("no blocks generated from report")
 
-        for chunk in chunk_list(blocks, 100):
+        chunks = chunk_list(blocks, 100)
+        for idx, chunk in enumerate(chunks, start=1):
+            print(f"⬆️ uploading chunk {idx}/{len(chunks)} blocks={len(chunk)}", flush=True)
             resp = request_with_retry(
                 "PATCH",
                 f"https://api.notion.com/v1/blocks/{page_id}/children",
