@@ -67,6 +67,7 @@ This will:
 ## Notes / Non-goals
 - Notion does **not** render Markdown directly; we convert Markdown into Notion blocks.
 - Markdown support is best-effort (headings/lists/code/quotes + some inline styles). Tables are currently degraded.
+- **Versioning Topics/**: by default, topic workspaces under `Topics/` are committed so runs are reproducible (raw → distilled → report). If you prefer a lighter repo, you can add patterns like `Topics/*/01_RawMaterials/` (or entire `Topics/`) to `.gitignore`.
 - This repo should not contain secrets. Put API keys in env/config outside git.
 
 ## License
