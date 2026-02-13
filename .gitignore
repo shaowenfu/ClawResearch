@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local runtime / logs
+research.log
+state.json
+run.lock
+watchdog.lock
+
+# Topic artifacts can be large; keep in repo if you want reproducibility.
+# If you prefer not to version research outputs, uncomment:
+# 20*/
+
+# OS
+.DS_Store
