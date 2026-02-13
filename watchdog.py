@@ -6,7 +6,7 @@ from datetime import datetime
 
 STATE_FILE = os.path.expanduser("~/clawd/research/state.json")
 CHECK_INTERVAL = 60  # seconds
-STALL_THRESHOLD = 300  # 5 minutes
+STALL_THRESHOLD = 300  # seconds (5 minutes)
 
 def load_state():
     try:
@@ -15,9 +15,17 @@ def load_state():
     except (FileNotFoundError, json.JSONDecodeError):
         return None
 
+def save_state(state: dict):
+    try:
+        with open(STATE_FILE, 'w') as f:
+            json.dump(state, f, indent=2)
+    except Exception as e:
+        print(f"[{datetime.now()}] Failed to save state: {e}")
+
 def wake_moltbot(message):
     try:
-        cmd = ["moltbot", "cron", "wake", "--text", message, "--mode", "now"]
+        # Use system event CLI command which is correct for waking the bot
+        cmd = ["moltbot", "system", "event", "--text", message, "--mode", "now"]
         subprocess.run(cmd, check=True)
         print(f"[{datetime.now()}] Woke Moltbot: {message}")
     except Exception as e:
@@ -29,19 +37,22 @@ def main():
         state = load_state()
         if state:
             status = state.get("status")
-            last_updated = state.get("last_updated", 0)
+            last_updated = float(state.get("last_updated", 0) or 0)
             now = time.time()
-            
+
             if status == "running":
                 time_since_update = now - last_updated
-                if time_since_update > STALL_THRESHOLD:
+
+                # Cooldown to avoid spam: only alert at most once per 10 minutes
+                last_alerted = float(state.get("watchdog_last_alerted", 0) or 0)
+                cooldown = 600
+
+                if time_since_update > STALL_THRESHOLD and (now - last_alerted) > cooldown:
                     msg = f"⚠️ Research Watchdog: Task stalled for {int(time_since_update)}s. Please resume."
                     wake_moltbot(msg)
-                    # Optional: Update state to 'alerted' to avoid spamming? 
-                    # For now, we'll rely on the fact that waking Moltbot usually triggers action.
-                    # Or we could sleep longer.
-                    time.sleep(300) # Sleep 5 mins after alerting to avoid spam
-            
+                    state["watchdog_last_alerted"] = now
+                    save_state(state)
+
         time.sleep(CHECK_INTERVAL)
 
 if __name__ == "__main__":
