@@ -323,6 +323,14 @@ def sync_notion(topic_path=None, status=None, report_file=None):
             json_body={"properties": props},
         )
 
+    # Ensure per-topic meta always records the current page id (even if page existed)
+    if page_id and topic_meta.get("notion_page_id") != page_id:
+        topic_meta["notion_page_id"] = page_id
+        if not topic_meta.get("created_at"):
+            topic_meta["created_at"] = datetime.now().isoformat()
+        topic_meta["updated_at"] = datetime.now().isoformat()
+        save_topic_meta(topic_meta, topic_meta_path)
+
     # 2) Overwrite content
     if report_file:
         print(f"🧹 clearing page content... page_id={page_id}", flush=True)
