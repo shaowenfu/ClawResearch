@@ -14,16 +14,29 @@ def now_iso():
 def slugify(name: str) -> str:
     """Stable slug for directory naming (same topic -> same folder).
 
-    Rules:
+    Prefer readable slugs for ASCII names; for non-ASCII (e.g., Chinese), fall back
+    to a stable hash-based slug to avoid collisions like "topic".
+
+    Rules (ASCII path):
     - lowercase
     - keep a-z0-9
     - convert spaces/punct to '-'
     - collapse repeats
+
+    Fallback (non-ASCII):
+    - t<YYYYMMDD>-<8hex> where hex is md5(utf-8 name)
     """
-    s = name.strip().lower()
+    raw = name.strip()
+    s = raw.lower()
     s = re.sub(r"[^a-z0-9]+", "-", s)
     s = re.sub(r"-+", "-", s).strip("-")
-    return s or "topic"
+    if s:
+        return s
+
+    import hashlib
+    h = hashlib.md5(raw.encode("utf-8")).hexdigest()[:8]
+    day = datetime.now().strftime("%Y%m%d")
+    return f"t{day}-{h}"
 
 
 def ensure_dirs(topic_dir: str):
