@@ -40,7 +40,9 @@ def start_watchdog():
     return p
 
 
-def stop_watchdog(p: subprocess.Popen | None):
+from typing import Optional
+
+def stop_watchdog(p: Optional[subprocess.Popen]):
     if not p:
         return
     try:

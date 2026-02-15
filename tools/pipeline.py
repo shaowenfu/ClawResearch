@@ -32,7 +32,7 @@ def build_outline(topic: str, topic_dir: Path) -> str:
         f"For each section, include: key questions to answer + evidence needed.\n\n"
         f"RAW MATERIALS:\n{raw}"
     )
-    out = run_llm(prompt, prefer="claude")
+    out = run_llm(prompt, prefer="gemini")
     (topic_dir / "03_Synthesis" / "outline.md").write_text(out, encoding="utf-8")
     return out
 
@@ -47,7 +47,7 @@ def write_section(topic: str, topic_dir: Path, section_title: str, outline: str)
         f"Target length: >= 1200 Chinese characters.\n\n"
         f"OUTLINE:\n{outline}\n\nRAW MATERIALS:\n{raw}"
     )
-    out = run_llm(prompt, prefer="claude")
+    out = run_llm(prompt, prefer="gemini")
     fn = section_title.strip().replace(" ", "_")
     (topic_dir / "02_Distilled" / f"section_{fn}.md").write_text(out, encoding="utf-8")
     return out
@@ -63,6 +63,6 @@ def assemble_report(topic: str, topic_dir: Path):
         f"Use the outline and section drafts below. Ensure the final report is >= 3500 Chinese characters.\n\n"
         f"OUTLINE:\n{outline}\n\nSECTION DRAFTS:\n{sections}"
     )
-    out = run_llm(prompt, prefer="claude")
+    out = run_llm(prompt, prefer="gemini")
     (topic_dir / "report.md").write_text(out, encoding="utf-8")
     return out
