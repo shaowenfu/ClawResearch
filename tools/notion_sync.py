@@ -282,7 +282,10 @@ def sync_notion(topic_path=None, status=None, report_file=None):
         if os.path.getsize(report_file) < 200:
             raise RuntimeError(f"report too small (<200 bytes), refusing to deliver: {report_file}")
 
-    page_id = topic_meta.get("notion_page_id") or state.get("notion_page_id")
+    # IMPORTANT: never fall back to global state notion_page_id.
+    # Each topic must bind to its own Notion page via Topics/<slug>/topic.json.
+    # Otherwise a new topic run could overwrite a previous report.
+    page_id = topic_meta.get("notion_page_id")
 
     # 1) Create or update metadata
     if not page_id:
@@ -306,13 +309,15 @@ def sync_notion(topic_path=None, status=None, report_file=None):
         # store notion page id per-topic to avoid cross-topic collisions
         topic_meta["notion_page_id"] = page_id
         save_topic_meta(topic_meta, topic_meta_path)
-        # also store in global state for convenience
-        save_state({"notion_page_id": page_id})
+        # NOTE: we intentionally do NOT store page_id in global state.
+        # Global state is shared across runs and could cause cross-topic overwrites.
     else:
         now_iso = datetime.now().isoformat()
         props = {
             "Last Updated": {"date": {"start": now_iso}},
             "Updated At": {"date": {"start": now_iso}},
+            # keep title in sync (also fixes cases where a page was accidentally reused)
+            "Name": {"title": [{"text": {"content": topic_name}}]},
         }
         if status:
             props["Status"] = {"select": {"name": status}}
