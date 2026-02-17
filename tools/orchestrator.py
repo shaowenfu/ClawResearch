@@ -114,7 +114,7 @@ def run_delivery(topic_dir: Path, *, status: str):
     # Notion delivery (retry handled inside notion_sync.py)
     heartbeat("delivery:notion")
     notion_sync = ROOT / "tools" / "notion_sync.py"
-    _run(["python3", str(notion_sync), "--status", status, "--report", str(report)])
+    _run(["python3", str(notion_sync), "--path", str(topic_dir), "--status", status, "--report", str(report)])
 
     # Git delivery with retry
     heartbeat("delivery:git")
