@@ -3,9 +3,12 @@ import json
 import os
 import subprocess
 from datetime import datetime
+from pathlib import Path
 
-STATE_FILE = os.path.expanduser("~/clawd/research/state.json")
-LOCK_FILE = os.path.expanduser("~/clawd/research/watchdog.lock")
+# IMPORTANT: keep paths consistent with orchestrator/doctor.
+ROOT = Path(__file__).resolve().parent
+STATE_FILE = str(ROOT / "state.json")
+LOCK_FILE = str(ROOT / "watchdog.lock")
 CHECK_INTERVAL = 60  # seconds
 STALL_THRESHOLD = 300  # seconds (5 minutes)
 

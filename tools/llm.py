@@ -4,30 +4,27 @@ from pathlib import Path
 
 from typing import Optional
 
-def run_llm(prompt: str, *, model: Optional[str] = None, prefer: str = "claude") -> str:
+def run_llm(prompt: str, *, model: Optional[str] = None, prefer: str = "gemini") -> str:
     """Run an LLM in headless mode and return text.
 
-    prefer: 'claude' or 'gemini'
+    IMPORTANT: prompts can be very large (hundreds of KB). Passing them as argv
+    will hit OS ARG_MAX. Therefore we always send prompt via STDIN.
+
+    prefer: 'gemini' or 'claude'
     """
     if prefer not in ("claude", "gemini"):
-        prefer = "claude"
+        prefer = "gemini"
 
     if prefer == "claude":
-        # Claude CLI supports -p/--print for non-interactive output
-        cmd = ["claude", "-p", prompt]
+        # Claude CLI availability/auth may vary. Use stdin to avoid ARG_MAX.
+        cmd = ["claude", "-p"]
         if model:
             cmd += ["--model", model]
-        try:
-            return subprocess.check_output(cmd, input="\n", universal_newlines=True, stderr=subprocess.STDOUT, timeout=900)
-        except Exception:
-            # fallback
-            return subprocess.check_output(["gemini", "--output-format", "text", "-p", prompt], input="\n", universal_newlines=True, stderr=subprocess.STDOUT, timeout=900)
+        return subprocess.check_output(cmd, input=prompt, universal_newlines=True, stderr=subprocess.STDOUT, timeout=900)
 
-    # prefer gemini
-    cmd = ["gemini", "-p", prompt]
+    # prefer gemini (default)
+    # Gemini CLI requires an argument after -p; stdin is appended to that prompt.
+    cmd = ["gemini", "-p", ""]
     if model:
         cmd += ["-m", model]
-    try:
-        return subprocess.check_output(cmd, input="\n", universal_newlines=True, stderr=subprocess.STDOUT, timeout=900)
-    except Exception:
-        return subprocess.check_output(["claude", "-p", prompt], input="\n", universal_newlines=True, stderr=subprocess.STDOUT, timeout=900)
+    return subprocess.check_output(cmd, input=prompt, universal_newlines=True, stderr=subprocess.STDOUT, timeout=900)

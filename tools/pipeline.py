@@ -25,7 +25,8 @@ def heartbeat(step: str, *, status: str = "running"):
 
 def build_outline(topic: str, topic_dir: Path) -> str:
     heartbeat("outline")
-    raw = read_all_texts(topic_dir / "01_RawMaterials", max_chars=120_000)
+    # Keep prompts within CLI/model limits; prefer smaller but representative evidence.
+    raw = read_all_texts(topic_dir / "01_RawMaterials", max_chars=50_000)
     prompt = (
         f"You are writing a deep research report in Chinese about: {topic}.\n"
         f"Given the raw materials below, produce a detailed outline with 6-10 sections.\n"
@@ -40,7 +41,7 @@ def build_outline(topic: str, topic_dir: Path) -> str:
 def write_section(topic: str, topic_dir: Path, section_title: str, outline: str) -> str:
     # One section per call => more detail
     heartbeat(f"section:{section_title}")
-    raw = read_all_texts(topic_dir / "01_RawMaterials", max_chars=160_000)
+    raw = read_all_texts(topic_dir / "01_RawMaterials", max_chars=60_000)
     prompt = (
         f"Write ONLY the section '{section_title}' in Chinese for a deep research report about {topic}.\n"
         f"Requirements: detailed, concrete, include mechanisms, numbers when available, and cite which raw file each claim comes from (by FILE name).\n"
@@ -56,7 +57,7 @@ def write_section(topic: str, topic_dir: Path, section_title: str, outline: str)
 def assemble_report(topic: str, topic_dir: Path):
     heartbeat("assemble")
     outline = (topic_dir / "03_Synthesis" / "outline.md").read_text(encoding="utf-8")
-    sections = read_all_texts(topic_dir / "02_Distilled", max_chars=400_000)
+    sections = read_all_texts(topic_dir / "02_Distilled", max_chars=220_000)
     prompt = (
         f"Assemble a final Chinese report about {topic} with the following structure:\n"
         f"- Title\n- Executive Summary\n- Main body (integrate sections, remove repetition)\n- Risks & Open Questions\n- Actionable next steps\n\n"

@@ -9,6 +9,7 @@ What it checks:
 - run.lock / watchdog.lock stale PID cleanup
 - state.json 'running' but no active PID + old last_updated
 - topic workspace sanity (missing dirs, empty RawMaterials)
+- notion_page_id collisions across Topics/*/topic.json (overwrite risk)
 
 This is deliberately conservative: it only auto-fixes obviously-stale locks.
 """
@@ -19,6 +20,8 @@ import time
 from pathlib import Path
 
 from utils import load_state, save_state, log
+
+import json
 
 ROOT = Path("/home/admin/clawd/research")
 STATE = ROOT / "state.json"
@@ -106,6 +109,34 @@ def scan_topics(limit: int = 50):
     return issues
 
 
+def scan_notion_collisions():
+    """Detect notion_page_id reused across topics (overwrite risk)."""
+    issues = []
+    if not TOPICS.exists():
+        return issues
+
+    pages = {}
+    for topic_dir in TOPICS.iterdir():
+        if not topic_dir.is_dir():
+            continue
+        meta = topic_dir / "topic.json"
+        if not meta.exists():
+            continue
+        try:
+            d = json.loads(meta.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        pid = d.get("notion_page_id")
+        if pid:
+            pages.setdefault(pid, []).append(str(topic_dir))
+
+    for pid, dirs in pages.items():
+        if len(dirs) > 1:
+            issues.append(("notion_page_id_collision", {"page_id": pid, "topics": dirs}))
+
+    return issues
+
+
 def fix(issues):
     fixed = []
     for kind, payload in issues:
@@ -148,8 +179,9 @@ def main():
     lock_issues = scan_locks()
     state_issues = scan_state()
     topic_issues = scan_topics()
+    notion_issues = scan_notion_collisions()
 
-    all_issues = [("lock", x) for x in lock_issues] + [("state", x) for x in state_issues] + [("topic", x) for x in topic_issues]
+    all_issues = [("lock", x) for x in lock_issues] + [("state", x) for x in state_issues] + [("topic", x) for x in topic_issues] + [("notion", x) for x in notion_issues]
 
     if not all_issues:
         log("doctor: no issues found")
