@@ -32,11 +32,38 @@ def wake_moltbot(message):
     except Exception as e:
         print(f"[{datetime.now()}] Failed to wake Moltbot: {e}")
 
+def _pid_alive(pid: int) -> bool:
+    try:
+        os.kill(pid, 0)
+        return True
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+
+
+def _read_pid(path: str):
+    try:
+        with open(path, "r") as f:
+            t = f.read().strip()
+        return int(t) if t else None
+    except Exception:
+        return None
+
+
 def main():
-    # simple lock to prevent multiple watchdog instances
+    # lock to prevent multiple watchdog instances; auto-clean stale lock
     if os.path.exists(LOCK_FILE):
-        print(f"[{datetime.now()}] Watchdog lock exists, refusing to start: {LOCK_FILE}")
-        return
+        old_pid = _read_pid(LOCK_FILE)
+        if old_pid and _pid_alive(old_pid):
+            print(f"[{datetime.now()}] Watchdog lock exists (pid={old_pid}), refusing to start: {LOCK_FILE}")
+            return
+        # stale/corrupt lock
+        try:
+            os.remove(LOCK_FILE)
+        except Exception:
+            pass
+
     try:
         with open(LOCK_FILE, "w") as f:
             f.write(str(os.getpid()))

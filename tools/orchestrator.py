@@ -10,7 +10,19 @@ from pipeline import build_outline, write_section, assemble_report
 
 ROOT = Path("/home/admin/clawd/research")
 LOCK_PATH = ROOT / "run.lock"
+WATCHDOG_LOCK_PATH = ROOT / "watchdog.lock"
 WATCHDOG_SCRIPT = ROOT / "watchdog.py"
+
+
+def _pid_alive(pid: int) -> bool:
+    try:
+        os.kill(pid, 0)
+        return True
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        # If we can't signal it, assume alive.
+        return True
 
 
 def _run(args, *, cwd=None, check=True):
@@ -19,8 +31,23 @@ def _run(args, *, cwd=None, check=True):
 
 
 def acquire_lock():
+    # Stale lock protection: if lock exists but PID is not alive, clear it.
     if LOCK_PATH.exists():
-        raise RuntimeError(f"Another run seems active (lock exists): {LOCK_PATH}")
+        try:
+            pid_txt = LOCK_PATH.read_text().strip()
+            pid = int(pid_txt) if pid_txt else None
+        except Exception:
+            pid = None
+
+        if pid and _pid_alive(pid):
+            raise RuntimeError(f"Another run seems active (lock exists pid={pid}): {LOCK_PATH}")
+
+        # stale lock
+        try:
+            LOCK_PATH.unlink()
+        except Exception:
+            pass
+
     LOCK_PATH.write_text(str(os.getpid()))
 
 
@@ -33,7 +60,20 @@ def release_lock():
 
 
 def start_watchdog():
-    # Start watchdog as child process (task-level), unbuffered
+    # Start watchdog as child process (task-level), unbuffered.
+    # If a stale watchdog.lock exists (e.g., previous crash), clear it first.
+    if WATCHDOG_LOCK_PATH.exists():
+        try:
+            pid_txt = WATCHDOG_LOCK_PATH.read_text().strip()
+            pid = int(pid_txt) if pid_txt else None
+        except Exception:
+            pid = None
+        if not (pid and _pid_alive(pid)):
+            try:
+                WATCHDOG_LOCK_PATH.unlink()
+            except Exception:
+                pass
+
     p = subprocess.Popen(["python3", "-u", str(WATCHDOG_SCRIPT)])
     save_state({"watchdog_pid": p.pid})
     log(f"watchdog started pid={p.pid}")
