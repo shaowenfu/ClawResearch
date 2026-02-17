@@ -9,8 +9,6 @@ This is intentionally deterministic and safe to commit.
 
 import json
 from pathlib import Path
-from datetime import datetime
-
 ROOT = Path(__file__).resolve().parents[1]
 TOPICS = ROOT / "Topics"
 ARCHIVE = ROOT / "_archive"
@@ -29,7 +27,6 @@ def load_meta(topic_dir: Path):
 def main():
     lines = []
     lines.append(f"# Topics Index\n")
-    lines.append(f"Generated: {datetime.now().isoformat()}\n")
 
     if not TOPICS.exists():
         lines.append("(Topics directory missing)\n")

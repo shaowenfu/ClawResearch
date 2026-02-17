@@ -1,5 +1,4 @@
 # Topics Index
-Generated: 2026-02-17T16:53:08.637683
 ## Active Topics
 - **moltbook-mbc-20** — Moltbook MBC-20
   - created_at: 2026-02-13T06:19:21.814444+00:00
