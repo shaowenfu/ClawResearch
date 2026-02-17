@@ -8,7 +8,7 @@ from pathlib import Path
 from utils import load_state, save_state, log
 from pipeline import build_outline, write_section, assemble_report
 
-ROOT = Path("/home/admin/clawd/research")
+ROOT = Path(__file__).resolve().parents[1]  # .../research
 LOCK_PATH = ROOT / "run.lock"
 WATCHDOG_LOCK_PATH = ROOT / "watchdog.lock"
 WATCHDOG_SCRIPT = ROOT / "watchdog.py"
