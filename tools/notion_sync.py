@@ -141,6 +141,14 @@ def markdown_to_blocks(md_text: str):
         # Code blocks
         if s.startswith("```"):
             language = s[3:].strip() or "plain text"
+            # Notion only accepts a fixed set of languages. Normalize common aliases.
+            lang0 = (language.split()[0].strip().lower() if language else "plain text")
+            if lang0 in ("chinese", "cn", "zh", "zh-cn", "zh_cn", "中文"):
+                language = "plain text"
+            elif lang0 in ("text", "txt"):
+                language = "plain text"
+            elif lang0 in ("sh", "shellscript"):
+                language = "shell"
             code_lines = []
             i += 1
             while i < len(lines) and not lines[i].strip().startswith("```"):
@@ -153,7 +161,7 @@ def markdown_to_blocks(md_text: str):
                     "type": "code",
                     "code": {
                         "rich_text": [{"type": "text", "text": {"content": code[:MAX_TEXT]}}],
-                        "language": language.split()[0],
+                        "language": language,
                     },
                 }
             )
