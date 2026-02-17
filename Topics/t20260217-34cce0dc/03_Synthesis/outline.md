@@ -1,100 +1,94 @@
 Loaded cached credentials.
 Hook registry initialized with 0 hook entries
-Here is a detailed outline for the research report on "心理咨询师（业余/线上）职业调研":
+```json
+{
+  "todos": [
+    {
+      "description": "Generate a detailed outline for the research report based on the provided evidence memos, including 6-10 sections, key questions, and evidence for each.",
+      "status": "in_progress"
+    }
+  ]
+}
+```
+# 心理咨询师（业余/线上）职业调研报告大纲
 
----
+## 1. 引言：调研背景与目的
 
-**报告主题：心理咨询师（业余/线上）职业调研**
-(Report Topic: Professional Survey of Psychotherapists (Amateur/Online))
+*   **关键问题：**
+    *   当前社会对心理健康服务的需求有何特点？
+    *   线上心理咨询和业余从业者兴起的背景是什么？
+    *   本调研旨在解决哪些问题，达成什么目标？
+*   **所需证据：**
+    *   （根据用户指令，此部分为报告开篇引入，不直接来源于提供的证据备忘录，但作为报告必要组成部分。可概述心理健康需求增长和线上服务模式兴起等普遍背景。）
 
----
+## 2. 全球视野下的心理咨询专业标准与执业规范
 
-**I. 引言：心理咨询师行业现状与“业余/线上”现象概述**
-(Introduction: Overview of the Psychotherapist Profession and "Amateur/Online" Phenomenon)
+*   **关键问题：**
+    *   国际上（如英国、美国）对于心理学家/心理咨询师的专业资质、教育背景和执业经验有哪些明确要求？
+    *   专业机构（如BACP）如何通过注册和认证体系确保执业质量和伦理标准？
+    *   不同专业级别（如注册会员、认证会员）之间的区别及其代表的专业能力如何？
+*   **所需证据：**
+    *   FILE: summary_raw_chunk_001.md (BACP注册与认证会员资格、申请要求、专业承诺、费用等)
+    *   FILE: summary_raw_chunk_002.md (美国加州心理学执业资格要求：博士学位、督导经验、指定课程、考试细则、执业更新与CPD等)
+    *   FILE: summary_raw_chunk_004.md (美国心理学家执业资格要求概述：教育、实习、经验、考试、薪资范围、执照目的)
 
-*   **关键问题:** 心理咨询师行业在国内外的发展现状如何？“业余/线上”心理咨询的概念和背景是什么？为何需要对这一群体进行职业调研？
-*   **所需证据:**
-    *   报告的整体背景和用户提供的任务描述，强调对“业余/线上”群体的关注。
-    *   对现有材料的初步解读，以引出专业标准和伦理规范的重要性。
+## 3. 中国心理咨询师资质认证现状与演变
 
-**II. 国内外心理咨询师的专业资质与执业要求**
-(Professional Qualifications and Practice Requirements for Psychotherapists Domestically and Internationally)
+*   **关键问题：**
+    *   中国“心理咨询师”职业资格证书的国家认证体系发生了哪些变化？当前是否仍存在国家统一的职业资格认证？
+    *   目前市面上的“心理咨询师证书”主要由哪些机构颁发？它们的法律效力与专业认可度如何？
+    *   第三方评价机构在心理咨询师技能等级认定中扮演什么角色，其设立和监管要求是什么？
+*   **所需证据：**
+    *   FILE: summary_raw_chunk_004.md (中国心理咨询师国家资格取消、现有证书性质、第三方评价机构、中科院心理所证书核查结论)
 
-*   **关键问题:**
-    *   美国加州的心理学家执业要求包括哪些？ (What are the licensure requirements for psychologists in California, USA?)
-    *   英国BACP的注册会员和认证会员有何区别，各有什么要求？ (What are the differences between registered and accredited membership in BACP, UK, and what are their respective requirements?)
-    *   中国目前对心理咨询师的官方资质要求和认证体系是怎样的？ (What are the current official qualification requirements and certification systems for psychotherapists in China?)
-*   **所需证据:**
-    *   `california_board_psychology_faq.md`: 详细的学历、实习、考试(EPPP, CPLEE)、继续教育等要求。
-    *   `bacp_registered_membership.md` & `bacp_accredited_membership.md`: BACP注册会员和认证会员的资格、受益和义务。
-    *   `chinajob_mohrss_2017_qualifications_catalog.md`: 尽管内容已过期，但可说明中国曾有或正在建立官方职业资格目录的背景。
+## 4. 中国心理咨询行业伦理规范与远程执业伦理挑战
 
-**III. 中国心理咨询伦理规范与专业关系**
-(Chinese Psychotherapy Code of Ethics and Professional Relationships)
+*   **关键问题：**
+    *   中国心理咨询行业的核心伦理原则和行为守则是什么？
+    *   《中国心理学会临床与咨询心理学工作伦理守则》如何应对远程专业工作（线上/电话咨询）带来的伦理挑战？
+    *   远程咨询中知情同意、保密、身份验证、应急处理、技术故障等方面的伦理要求具体体现在哪些方面？
+    *   心理咨询师如何通过媒体和自媒体进行专业传播并遵守伦理规范？伦理违规行为的惩戒机制如何？
+*   **所需证据：**
+    *   FILE: summary_raw_chunk_003.md (中国心理学会《临床与咨询心理学工作伦理守则（第二版）》：总则、知情同意、远程专业工作、媒体沟通与合作、伦理问题处理与惩戒等)
 
-*   **关键问题:**
-    *   中国心理学会的伦理守则主要包含哪些核心原则？ (What are the main core principles included in the Chinese Psychological Society's Code of Ethics?)
-    *   专业关系建立与维护（公正对待、收费、多重关系、性/亲密关系）有哪些具体规定？ (What are the specific regulations regarding the establishment and maintenance of professional relationships (fair treatment, fees, multiple relationships, sexual/intimate relationships)?)
-    *   心理师在转介和终止专业服务时的伦理考量是什么？ (What are the ethical considerations for psychotherapists when referring and terminating professional services?)
-*   **所需证据:**
-    *   `cpa_ethics_2018_journal.md`: "总则"中的善行、责任、诚信、公正、尊重原则，以及第1章“专业关系”的详细内容。
+## 5. 线上心理咨询平台运营模式与从业资质管理
 
-**IV. 知情同意与隐私保密原则**
-(Informed Consent and Principles of Privacy and Confidentiality)
+*   **关键问题：**
+    *   线上心理咨询平台如何定义其服务内容和咨询师角色？
+    *   平台如何对入驻心理咨询师进行资质审核和管理？其审核标准和所需证明文件有哪些？
+    *   平台与咨询师之间的权利义务关系如何界定，尤其在信息保密、行为规范和责任承担方面？
+    *   平台如何处理咨询预约、技术支持，以及在出现纠纷或违规情况时的处理机制？
+*   **所需证据：**
+    *   FILE: summary_raw_chunk_005.md (心理咨询师入驻壹心理协议要点：平台定义、资质审核与注册条件、心理咨询师权利义务、壹心理权利义务、协议终止、有限责任与违约责任)
 
-*   **关键问题:**
-    *   心理师在专业服务开始前，如何确保寻求专业服务者的知情同意？ (How do psychotherapists ensure informed consent from service seekers before initiating professional services?)
-    *   保密原则的范围和例外情况有哪些？ (What are the scope and exceptions to the principle of confidentiality?)
-    *   专业信息（记录、测验资料）的创建、使用、保存和处理应遵守哪些保密规定？ (What confidentiality regulations should be followed in the creation, use, storage, and processing of professional information (records, test data)?)
-*   **所需证据:**
-    *   `cpa_ethics_2018_journal.md`: 第2章“知情同意”和第3章“隐私权和保密性”的详细内容。
+## 6. 中国心理咨询市场供需、收入现状与职业发展前景
 
-**V. 远程与线上心理咨询的伦理挑战与规范**
-(Ethical Challenges and Guidelines for Remote and Online Psychotherapy)
+*   **关键问题：**
+    *   中国心理咨询市场目前存在多大的供需缺口？
+    *   心理咨询师的收入水平与哪些因素（如咨询时长、经验）高度相关？“轻松月入过万”的说法是否真实？
+    *   心理咨询师（无执业医师资格）与心理医生（具备执业医师资格）在职业定位、服务范围和收入方面有何本质区别？
+    *   新入行的心理咨询师面临哪些职业发展挑战和机会？
+*   **所需证据：**
+    *   FILE: summary_raw_chunk_004.md (中国心理咨询师职业资格现状：市场供需与收入、核查结论)
 
-*   **关键问题:**
-    *   远程（网络/电话）心理咨询的特殊伦理考量有哪些？ (What are the specific ethical considerations for remote (online/phone) psychotherapy?)
-    *   在知情同意、保密性、身份验证、危机处理和专业界限方面，远程咨询有哪些额外要求？ (What additional requirements exist for remote counseling regarding informed consent, confidentiality, identity verification, crisis management, and professional boundaries?)
-    *   心理师如何告知寻求专业服务者远程专业工作的局限性和风险？ (How do psychotherapists inform service seekers about the limitations and risks of remote professional work?)
-*   **所需证据:**
-    *   `cpa_ethics_2018_journal.md`: 第8章“远程专业工作(网络/电话咨询)”的详细内容。
+## 7. 业余/线上心理咨询的风险与挑战
 
-**VI. 心理咨询师的专业胜任力发展、培训与督导**
-(Professional Competency Development, Training, and Supervision for Psychotherapists)
+*   **关键问题：**
+    *   在缺乏国家统一认证标准和严格监管的背景下，业余/线上心理咨询可能带来哪些主要风险（如服务质量参差不齐、伦理边界不清、虚假宣传等）？
+    *   针对客户而言，选择业余/线上咨询可能面临哪些潜在风险和权益受损的可能？
+    *   平台在免责条款中如何限定其责任，这给客户和咨询师带来了哪些影响？
+*   **所需证据：**
+    *   FILE: summary_raw_chunk_004.md (无国家认证、现有证书性质、收入差异等导致的乱象)
+    *   FILE: summary_raw_chunk_003.md (伦理违规处理机制反推风险的存在)
+    *   FILE: summary_raw_chunk_005.md (线上平台有限责任与免责条款)
 
-*   **关键问题:**
-    *   心理咨询师如何提升和保持专业胜任力？ (How do psychotherapists enhance and maintain professional competence?)
-    *   继续教育、专业培训和督导在职业发展中的重要性及其伦理规范是什么？ (What is the importance of continuing education, professional training, and supervision in career development, and what are their ethical guidelines?)
-    *   教学、培训和督导过程中如何处理多重关系和评估学员表现？ (How are multiple relationships managed and trainee performance evaluated during teaching, training, and supervision?)
-*   **所需证据:**
-    *   `california_board_psychology_faq.md`: 持续专业发展(CPD)的要求。
-    *   `bacp_registered_membership.md`: 注册会员的CPD和督导要求。
-    *   `cpa_ethics_2018_journal.md`: 第4章“专业胜任力和专业责任”和第6章“教学、培训和督导”的详细内容。
+## 8. 政策建议与行业展望
 
-**VII. 媒体沟通、研究与伦理问题处理**
-(Media Communication, Research, and Handling Ethical Issues)
-
-*   **关键问题:**
-    *   心理咨询师在与媒体合作和进行学术研究时应遵守哪些伦理规范？ (What ethical guidelines should psychotherapists follow when collaborating with media and conducting academic research?)
-    *   伦理问题如何处理，以及违反伦理守则的惩戒机制是怎样的？ (How are ethical issues handled, and what are the disciplinary mechanisms for violating the code of ethics?)
-    *   伦理守则与法律法规冲突时，心理师应如何行动？ (How should psychotherapists act when the code of ethics conflicts with laws and regulations?)
-*   **所需证据:**
-    *   `cpa_ethics_2018_journal.md`: 第7章“研究和发表”、第9章“媒体沟通与合作”以及第10章“伦理问题处理”的详细内容。
-
-**VIII. “业余/线上”心理咨询师面临的挑战与发展机遇**
-(Challenges and Development Opportunities for "Amateur/Online" Psychotherapists)
-
-*   **关键问题:**
-    *   缺乏正式资质和体系的“业余”咨询师，如何有效遵循专业标准和伦理规范？ (How do "amateur" counselors lacking formal qualifications and systems effectively adhere to professional standards and ethical guidelines?)
-    *   线上咨询在提供便利性的同时，如何应对身份验证、紧急情况响应、保密性保障等伦理风险？ (While online counseling offers convenience, how can ethical risks such as identity verification, emergency response, and confidentiality protection be addressed?)
-    *   针对中国“业余/线上”心理咨询群体，监管部门或行业协会应如何进行引导、规范与支持？ (How should regulatory bodies or industry associations guide, regulate, and support the "amateur/online" psychotherapy group in China?)
-    *   结合国内外经验，中国“业余/线上”心理咨询的未来发展方向和政策建议。 (Based on domestic and international experience, what are the future development directions and policy recommendations for "amateur/online" psychotherapy in China?)
-*   **所需证据:** 综合分析前述各章中的资质要求、伦理规范（特别是远程工作）、专业发展和惩戒机制等内容，将其应用于“业余/线上”心理咨询的特定语境。
-
-**IX. 总结与展望**
-(Conclusion and Outlook)
-
-*   **关键问题:** 本次调研对“业余/线上”心理咨询师职业发展的主要发现是什么？未来行业健康发展的趋势和政策建议有哪些？
-*   **所需证据:** 对报告中所有主要发现的综合概括，提出展望和建议。
-
----
+*   **关键问题：**
+    *   为了促进中国心理咨询行业的健康发展，尤其是在业余/线上领域，可以提出哪些政策建议？
+    *   如何加强对第三方认证机构的监管，提高其专业性和公信力？
+    *   线上心理咨询平台在未来应如何完善其资质审核、伦理监管和纠纷处理机制？
+    *   公众在选择心理咨询服务时，应如何辨别资质、规避风险？
+*   **所需证据：**
+    *   （此部分是对前述所有证据的综合分析和未来展望，不直接来源于单一证据备忘录，而是基于所有备忘录内容进行推导和建议。）
+```

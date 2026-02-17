@@ -1,0 +1,382 @@
+You are assisting a deep research report in Chinese about: 心理咨询师（业余/线上）职业调研.
+Given the raw materials chunk below, produce a compact evidence memo in Chinese.
+Rules:
+- Focus on concrete facts, mechanisms, numbers, and claims.
+- Keep it structured with bullet points and short paragraphs.
+- Preserve traceability: when you mention a claim, include the source as (FILE: <name>).
+- Target length: 800-1500 Chinese characters.
+
+RAW CHUNK:
+
+
+# FILE: psychology_org_licensure_overview.md
+来源：https://www.psychology.org/psychology/licensure/
+
+# Psychology Licensing Requirements By State | Psychology.org
+
+Psychology Licensing Requirements By State | Psychology.org
+PsychologyPsychology
+Rankings
+Degrees
+Career
+Rankings
+BEST UNDERGRADUATE PROGRAMSBachelor's in Psychology
+Bachelor's in Forensic Psychology
+Bachelor's in Child Psychology
+Bachelor's in Health Psychology
+Bachelor's in Behavioral Psychology
+BEST GRADUATE PROGRAMSMaster's in Psychology
+Master's in Clinical Psychology
+Master's in I-O Psychology
+Doctorates in Psychology
+Ed.S. in School Psychology
+Degrees
+BY CONCENTRATIONSchool Psychology
+Clinical Psychology
+Forensic Psychology
+Industrial Organizational Psychology
+Child Psychology
+BY DEGREEAssociate Degree
+Bachelor's Degree
+Master's Degree
+Doctoral Degree
+All Degree Program Guides
+POPULAR ARTICLESBest Types of Online Psychology Degrees
+Guide to Online Psychology Degrees
+Graduate Certificates
+Counseling vs. Psychology
+Psy.D. vs. Ph.D.
+BA vs. BS
+View All
+Career
+LEARN HOW TO BECOMEClinical Psychologist
+Forensic Psychologist
+Child Psychologist
+School Psychologist
+Neuropsychologist
+BEST JOBS FOR YOUR DEGREEBachelor's in Psychology
+Master's in Psychology
+Ph.D. in Psychology
+Alternative Career Options with a Psychology Degree
+View All
+LICENSURECalifornia
+Florida
+Illinois
+Texas
+Virginia
+All State Licensure
+Ready to Find Your School?Search Programs
+CounselingCounseling
+Degrees & Rankings
+Career
+Degrees & Rankings
+SCHOOL RANKINGSBest Online Counseling Programs
+Master's in School Counseling
+Master's in Mental Health Counseling
+Master's in Marriage and Family Counseling
+Fastest Online Counseling Degrees
+DEGREE GUIDESMaster's in Counseling
+Guide to Counseling Degrees
+MS vs. MA in Counseling: What's the Difference?
+Career
+LEARN HOW TO BECOMELicensed Counselor
+Pastoral Counselor
+Sex Therapist
+Family Counselor
+Rehabilitation Counselor
+CAREER GUIDESFastest Path Into a Counseling Career
+Substance Abuse Counselor
+Social Work vs. Counselor
+School Counselor
+LICENSUREIllinois
+Texas
+Virginia
+Ready to Find Your School?Search Programs
+Social WorkSocial Work
+Degrees
+Resources
+Degrees
+SCHOOL RANKINGSAffordable Master's Programs
+Best Social Work Programs
+Best Master's Programs
+Best Christian Colleges
+DEGREE GUIDESPrerequisites for a Master’s Degree in Social Work?
+Getting an MSW Without a BSW
+Resources
+CAREER GUIDESHow to Become a Social Worker
+Highest Paying States
+Entry-Level Jobs
+How To Get Your Social Work License
+RESOURCESTheories in Social Work
+Social Work Scholarships
+Social Work Internships
+Professional Organizations
+View All
+LICENSURECalifornia
+Florida
+Texas
+Indiana
+Ready to Find Your School?Search Programs
+ResourcesResources
+Essential Resources
+Mental Health Education
+Essential Resources
+RESOURCES FOR STUDENTSFree Online Psychology Courses
+Free Digital Psychology Textbooks
+How to Find an Internship
+Psychology Salary Calculator
+FINANCIAL AIDScholarships for Psychologists
+Financial Aid for Psychologists
+Financial Aid for Military Veterans
+Financial Aid for Minority Students
+Mental Health Education
+MENTAL HEALTH FIELDSWhat Is Forensic Psychology?
+What Is A Life Coaching?
+What Is Art Therapy?
+What Is Psychodynamic Therapy?
+LEARN ABOUT THERAPYThe Impact of AI in Psychology
+Exploring Educational Psychology Theory
+10 Books on Psychology You Should Be Reading
+Modalities of Therapy
+Ready to Find Your School?Search Programs
+Psychology Licensing Requirements by State: Learn How to Become a Psychologist in Your State
+By Janice Monti, Ph.D.
+Updated on  October 16, 2025
+Edited by Courtnee James
+License Types
+State Requirements
+How to Become Licensed
+Educational Requirements
+Examination Requirements
+Experience Requirements
+FAQ
+Are you planning to become a licensed psychologist? Learn about the licensure process and how to meet your state’s specific psychologist licensure requirements.
+While each state sets its own rules for psychology licensure, most require that prospective psychologists complete similar processes. Generally, to become a psychologist, you need to earn a doctorate, complete supervised experience requirements, and pass exams. Use this guide to walk you through the common steps and help you prepare for your state’s specific requirements.
+Different Types of Psychology Licenses
+Clinical psychology,child psychology, and school psychology are some of the most common psychology licenses. Each license type differs by scope of practice and state-specific requirements for education, supervised experience, and examinations.
+You must earn a doctorate in psychology, either a Ph.D. or Psy. D., to practice independently and to provide assessment, diagnosis, psychotherapy, counseling, and testing. However, in some states, individuals with a master’s degree in psychology or a related field may practice under supervision. Many schools offer undergraduate and graduate online psychology degrees, but licensure generally requires a doctorate from an accredited in-person program.
+Aspiring psychologists should plan to complete approximately 2,000 hours during their doctoral internship and another 2,000 hours of postdoc experience to meet most state licensure requirements. All state boards require applicants for licensure to pass the Examination for Professional Practice in Psychology (EPPP), and some states may also ask for an oral or jurisprudence exam.
+Psychologist Licensure Requirements by State
+Psychologist licensure requirements will vary by state. Explore what it takes to become a licensed psychologist in select states.
+Arkansas
+Connecticut
+Florida
+Georgia
+Illinois
+Maryland
+Massachusetts
+Michigan
+Missouri
+Nebraska
+Nevada
+New Jersey
+North Carolina
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+South Dakota
+Tennessee
+Utah
+Virginia
+Washington
+Wyoming
+How Do I Get a Psychologist License?
+Licensing regulations differ by state, but you generally need a doctorate in psychology, clinical experience, and passing scores on the EPPP and any state-specific exams. The total time from earning your undergraduate and graduate degrees to meeting state licensure requirements can take 8-12 years.
+Step 1: Earn a Doctorate
+The majority of states require a Psy.D. or Ph.D. in psychology from a regionally accredited school. In some states, candidates for licensure must hold a doctorate from a program accredited by the American Psychological Association (APA).
+Step 2: Pass the EPPP and State-Specific Examination
+Candidates for psychologist licensure in all states must pass the EPPP, a standardized, computer-based test that evaluates knowledge across eight content areas and readiness for independent practice. In addition to the EPPP, some states may require a jurisprudence exam and/or oral examination. The jurisprudence exam will cover state-specific laws, regulations, and ethics for psychology practice.
+Step 3: Gain Required Experience, if Applicable
+Students typically complete an internship as part of their doctoral requirements, followed by a post-doctoral clinical experience. The total number of supervised hours can range from 1,500 to 6,000 hours, depending on state requirements for your psychology specialization.
+Step 4: Apply for State Psychology Licensure
+You should familiarize yourself with your state’s specific licensure requirements early in your psychology studies. After meeting all requirements, you can submit your application along with any requested transcripts, personal and professional background information, and fees to your state’s licensing board for final approval.
+Educational Requirements for a Psychology License
+You need to hold a Psy.D. or Ph.D. in psychology to qualify for licensure in most states. Although some programs may require a master’s degree, most offer direct-entry pathways for bachelor’s degree holders or award a master’s along the way to the doctorate. Most doctoral programs look for candidates with excellent grades in relevant coursework and evidence of research experience.
+Bachelor’s in Psychology
+While you may not necessarily need a bachelor’s degree in psychology to enter a doctoral program, this degree offers a strong foundation in psychological concepts and research methods, providing essential skills and content knowledge for rigorous graduate work.
+A bachelor’s degree typically requires 120 credits completed over four years. If you plan to become a licensed psychologist, a bachelor’s degree prepares you for advanced graduate study. Even if you do not want to enter direct clinical practice, a bachelor’s degree equips you with versatile skills applicable to various careers in psychology-related fields. Those with a bachelor’s degree in psychology often work as case managers, career counselors, marketing researchers, and human resource specialists.
+Master’s in Psychology
+A master’s in psychology takes 1-3 years to complete, depending on whether you enroll full-time, part-time, or in an accelerated or online program. Although a master’s can pave the way to doctoral studies and state licensure, some graduates move directly into positions as therapists, counselors, human resources directors, and social service managers. A master’s can also prepare you for non-clinical careers in fields like industrial-organizational psychology and forensic psychology.
+Although most states require a doctorate for licensure, some allow individuals with a master’s degree to conduct psychology services under supervision or with a restricted scope of practice.
+Accreditation is a key factor when choosing a master’s program. Accreditation ensures that a school meets established academic standards and qualifies students for federal financial aid. Programmatic accreditation, awarded to psychology programs within a school, can affect licensure eligibility and employment opportunities.
+While the APA Commission on Accreditation (APA-CoA) does not accredit master’s programs, the Master’s in Psychology and Counseling Accreditation Council (MPCAC) accredits master’s programs in psychology and counseling, and the National Association of School Psychologists (NASP) accredits graduate degrees in school psychology.
+Ph.D. in Psychology or Psy.D.
+Ph.D. and Psy.D. degrees both require coursework, a practicum experience, and a dissertation or applied project. Earning a Ph.D. or Psy.D. usually takes five to six years. Although both degrees provide clinical training, the Ph.D. emphasizes scientific research, leading to multiple career paths in academia, research, and clinical settings. The Psy.D. is more of a practice-oriented degree, primarily preparing students to deliver direct clinical services.
+Attending an APA-accredited program, whether you choose a Ph.D. or Psy.D. degree, ensures academic quality and indicates your readiness for practice. Accreditation is essential for licensure, financial aid eligibility, and employment. Although the APA does not accredit online Ph.D. or Psy.D. programs, some accredited doctoral programs offer online courses.
+Examination Requirements for Psychologist Licensure
+The EPPP determines your eligibility for licensure. The computer-based exam consists of 225 multiple-choice questions that cover the core areas of psychology, including research methods, diagnosis, assessment, intervention, and ethics. You generally need to score 500 or higher, although passing score requirements may vary by state.
+The registration fee for the EPP Part 1 exam, which tests foundational knowledge, is $600 plus a non-refundable $87 test center fee. The fee for Part 2, which focuses on practical skills, is $450. Some state licensing boards do not require the Part 2 exam.
+Experience Requirements for a Psychology License
+Most states require a specific number of internship hours during the doctoral program and at least a year-long post-doctoral experience. Total required hours range from 1,500 to 6,000 or more.
+A handful of states do not require postdoc experience. Requirements may also differ for various specialties and license types, such as clinical psychology, school psychology, and some master’s-level mental health licenses. Consult the Associate of State and Provincial Psychology Boards (ASPPB) for current information on experience requirements for your state.
+Frequently Asked Questions
+CollapsedExpand All
+What is the purpose of licensure in psychology?
+Licensure in psychology serves the public’s best interests, ensuring competency through education, training, and examination requirements. The licensure process helps limit the practice of psychology to qualified and vetted professionals, establishes high standards of practice, and upholds legal and ethical standards and accountability.
+What qualifications do you need to be a psychologist?
+In most states, to receive approval to practice as a licensed psychologist, you need to earn a doctorate in psychology from an accredited institution, fulfill a specific number of supervised clinical experience hours, and pass the EPPP exam and any state-specific jurisprudence or other required exams.
+How much do psychologists make?
+Annual earnings for psychologists range from $54,860 to $157,330, according to the Bureau of Labor Statistics. Salaries vary widely based on years of experience, specialty, and type of employer. Psychologists working in government agencies, ambulatory health care services, and local, state, and private hospitals earned the highest salaries.
+Can you be a psychologist without a Ph.D.?
+In most cases, you need a doctorate and a state license to call yourself a psychologist or practice independently. While a master’s can qualify you for certain mental health careers, such as a licensed marriage and family therapist or a licensed professional clinical counselor, these roles have a more limited scope of practice.
+Related Resources
+How to Choose Between a Psy.D. and Ph.D.
+By Psychology.org Staff Writers
+September 25, 2025
+How to Choose a Psychology Program
+By James M. Tobin
+September 26, 2025
+These Are the Fastest Growing Jobs in Psychology in 2025
+By Maura Deering, J.D.
+October 6, 2025
+Psychology.org LogoPsychology.org Logo
+The Psychology.org team includes writers, editors, and contributing psychology students and professionals dedicated to helping you navigate the field. We follow a strict editorial and review process to ensure our content is up-to-date, factual, and relevant. Learn more about our editorial process.
+Content
+Psychology
+Counseling
+Social Work
+Resources
+Get To Know Us
+About Us
+Our Experts
+Ranking Methodology
+Contact Us
+Support
+Advertising Disclosure
+Consumer Health Data Privacy
+Privacy Policy
+Cookie Settings
+© 2026 Psychology.org, a Red Ventures Company
+Do Not Sell My Personal InformationSitemapTerms of Service
+
+
+# FILE: thepaper_psych_cert_factcheck.md
+来源：https://www.thepaper.cn/newsDetail_forward_17122896
+
+# 心理咨询师轻松考证月入过万？真相：国家职业资格目录已无此证_澎湃号·湃客_澎湃新闻-The Paper
+
+心理咨询师轻松考证月入过万？真相：国家职业资格目录已无此证_澎湃号·湃客_澎湃新闻-The Paper
+下载客户端
+登录
+无障碍
++1
+心理咨询师轻松考证月入过万？真相：国家职业资格目录已无此证
+2022-03-16 08:22
+来源：澎湃新闻·澎湃号·湃客
+听全文
+字号
+原创 核真录 核真录
+第两百期
+文稿 | 南大新传未来编辑部·核真录 学生
+王雨禾 吴雨航 蒋慧伶 欧阳远帆
+编辑 | 徐蕾洁 林歆瑶
+排版 | 吴雨航
+“偷偷考个心理咨询师，时间自由工资高”，在很多电脑网页，手机屏幕的边角都会有类似这样“偷偷考个 xx 证书”技能培训广告。推荐就业、高薪收入、灵活兼职、自我提升， 广告中列出的每个优点都戳中很多人的痛点。从而吸引大家点击了解这个技能证书，之后花钱报班，考试拿证，一切似乎是顺理成章的过程。
+图源网络
+心理咨询师证是一个国家认可的正式资格证书吗？真的可以“轻松考证月入过万”吗？在就业市场如此内卷的今天，这样的好事不免让许多求职者动心。而核真录对这一职业培训市场上的现象展开核实后，却发现心理咨询师职业资格证书早在 2017年9 月，就已退出国家职业资格目录，现阶段所谓心理咨询师证，只是培训考试机构的合格证明，只能作为一种能力参考证书，即便当上了心理咨询师，要想拿高薪也并不容易。
+核查一：“心理咨询师”具备国家职业资格吗？
+不具备
+心理咨询师曾有具体的职业标准。如 2002 年，劳动部曾启动心理咨询师国家职业资格项目，并在全国范围内开展过统一鉴定考试。2005 年，为进一步完善国家职业标准体系，人力资源和社会保障部制定了《心理咨询师国家职业标准》。
+但根据 2017 年人社部发布的 68 号文件《关于公布国家职业资格目录的通知》，各地区、各部门未经批准不得在目录之外自行设置国家职业资格，而心理咨询师职业未被列入名单。通知要求，行业协会、学会等社会组织和企事业单位可依据市场需要自行开展能力水平评价活动，但不得变相开展资格资质许可和认定，证书不得使用“中华人民共和国”、“中国”、 “中华”、“国家”、“全国”、“职业资格”或“人员资格”等字样和国徽标志。该通知颁布后，心理咨询师资格证考试认定正式取消。
+据此，我国停止了心理咨询师职业技能鉴定和职业资格证书有关工作。也就是说，不同于国家认定的教师资格，注册会计师资格，我国目前没有由国家举办的，认定心理咨询师职业资格的考试，因此也没有考上了就成为国家认可的心理咨询师的说法。
+至此，由政府负责为心理咨询师颁发职业资格类证书转变为政府不再颁发证书，由社会培训评价组织和用人单位开展职能等级认定，政府在这一过程中承担组织、监管职能。想要成为“心理咨询师”，需要依靠自己的专业技能，找到正规的第三方机构进行水平认定，而这些机构提供的证书被承认的范围也要谨慎考察。
+核查二：
+什么组织才可以提供心理服务工作的资质证明？
+人力资源和社会保障部下属的中国就业培训技术指导中心于 2018 年 12 月发布了《关于征集第三方评价机构的通告》，明确第三方评价机构应具备的条件是：
+1.在中国境内依法登记，以人才培养评价服务为主要工作职责的企业或社会评价组织， 无违法、失信等不良行为记录。
+2.在拟开展评价的职业领域具有广泛的影响力，曾经参与国家职业技能标准、行业相关 标准编制工作，有教学大纲和教材，有考核评价经验和基础条件，具有 6 年以上人才评价工 作经历，累计 5 万人次以上的培训评价规模。
+3.有专门负责职业技能等级认定工作的机构、专职工作人员、专家队伍及相应的场地和 经费保障。
+4.具有完善的职业技能等级认定工作质量管控措施，把社会效益放在首位，不得以营利 为最终目的。
+5.自愿接受人力资源和社会保障部门的监督管理。
+大部分报名机构提到的“心理咨询师证书”其实只是参加第三方评价机构组织的培训，并在考试合格后获得的考试合格证书。要获得有一定社会认可度的“心理咨询师培训合格证书”，首先要注意甄别第三方评价机构的正规性和权威性。
+比如一些培训广告中提到的“中科院颁发的心理咨询师证书”就是由第三方评价机构中国科学院心理研究所颁发的心理咨询师基础培训的培训合格证书。据核真录了解，心理咨询师基础培训课程是中科院心理所继续教育学院于 2017 年底组织开发的。中科院心理所官网称：“心理所颁发的证书是作为心理咨询师国家认证取消、行业认证尚未规范开启之前，通过非学历教育普及心理知识和培养心理服务入门人才的一种过渡性安排，作为学员参加心理咨询基础培训经历的有效证明，以及从事社会心理服务的资格参考。”
+图源中国科学院心理研究所官网中科院心理研究所
+《心理咨询师基础培训合格证书》
+要拿到这一证书要经过如下 9 个环节，而且它不是职业资格证书，只是资格参考。
+中科院心理所证书颁发流程中科院心理所心理咨询师基础培训合格证书
+核查三：考取“心理咨询师”就能拿到高薪吗？
+“轻松过万”不现实
+认为“心理咨询师”能拿高薪的理由往往是，社会需求大而从业者少。一份由简单心理、北京师范大学心理学部心理健康服务中心和第一财经商业数据中心联合发布的《2018 心理咨询行业人群洞察报告》显示，“截止到 2017 年底，全国精神科医师 3.34 万人，心理治疗师仅有约 6000 人。”在 2017 年 9 月国家为规范心理咨询行业发展，取消心理咨询师职业资格认证考试前，已有大批人士考取了“心理咨询师”二、三级资格证。但据这份报告调查，在“约 120 万的获证心理咨询师中，仅有三四万人在从事心理咨询专职或兼职工作，心理咨询师缺口多达 130 万人。”
+《2018 心理咨询行业洞察报告》节选
+这份报告还显示，心理咨询师一般按照单次咨询进行收费，其定价多由心理咨询师个人 或其所在机构制定，一次 200 元以下至 800 元以上不等。其中咨询经验是重要衡量指标。报告中提及，在 2018 年 11 月面向心理咨询师群体的问卷调查中，咨询经验 1000-5000 小时 的心理咨询师有 58.21%月收入可达一万元以上。5000 小时以上咨询经验的咨询师，有 46.67% 月收入两万元以上。
+但需要搞清楚的是，这里所说的“心理咨询师”往往还包含职业的心理医生。心理医生是指具有执业医师资格并在医疗机构从事临床精神科诊疗的专业人员，不同于没有职业认证资格的心理咨询人员，后者是运用心理学的方法，对心理适应方面出现问题并寻求解决问题的求询者提供心理援助，没有行医资格。
+以南京为例，核真录调查到南京脑科医院下设的心理咨询科室医师挂号费用均为 412 元；南京市中心某心理咨询室根据心理问题、咨询形式分类，一小时价格在 300~600 元不等。
+图源美团搜索
+从南京市区另一家安肯心理咨询机构可以看到，咨询价格根据心理咨询师的资深程度， 一小时标价 400~2000 元不等，资深程度和从业时长，培训记录，所获证书等条件均有关系， 并非从业年数越长，咨询价格越高。这家心理咨询机构提供的咨询师资料中显示，几乎每位咨询师的个人简介上都写到是“国家二级心理咨询师”，从业时长最短的是 4 年，最长的是 18 年，从业 7 年以上咨询师较多。
+那么，心理咨询师的总体工资水平是多少呢？根据职友集网站抽样调查显示，全国心理咨询师平均工资为8.4k元/月，其中拿6k到8k工资的人数占比最多，达到24%。同一网站统计，全国律师的平均职业收入为 8.9k/月，但其中拿10k-15k工资人数占比最多，达 17.4%， 全国教师的平均职业收入为7.8k/月，同样是拿6k到8k工资的人数占比最多，达26.8%。这些数据不一定完全准确，但可以了解一个大致的职业收入情况，当然，像开头的广告语所说的“轻松过万”肯定是不现实的。图源职友集网站
+核查结论
+自 2017 年 9 月起，“心理咨询师”就退出了国家职业资格目录。
+各大公众号中售卖的课程宣称其拥有颁发心理咨询师资格证书，其实只是水平类认定证书，仅供其他机构参考，不是职业资格证书，没有法律效力。对这类证书要严格考察第三方机构自身的权威性和影响力。
+没有执业资格认证的心理咨询师与具有医师资格证的心理医生不是一回事，但现在统计心理咨询师收入时常把两者混为一谈。
+心理咨询师的收入水平差异很大，与咨询时长挂钩明显。这也意味着，新入行的咨询师需要经历漫长的熬资历阶段，短期内很难有高收入。
+参考资料
+1、《人力资源社会保障部对十三届全国人大三次会议第 9718 号建议的答复》发布时间：2020 年 11 月 11 日 人社建字〔2020〕86 号
+2、中国卫生人才网：https://www.21wecan.com/rcpj/qgwszyjszgks/
+3、中科院心理所继教学院关于“心理咨询基础培训”项目的说明：
+https://jcpx.psych.ac.cn/iip/ArticleView/?GUID=206D700C-D421-427E-8583-93BF81E40782
+4、《心理咨询师国家职业标准》（2005 年版）
+https://baike.baidu.com/item/%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E5%B8%88%E5%9B%BD% E5%AE%B6%E8%81%8C%E4%B8%9A%E6%A0%87%E5%87%86/5595734?fr=aladdin
+5、《2013-2017 年全国应用心理学专业毕业生就业大数据报告》
+6、心理咨询师考试：
+https://baike.baidu.com/item/%E5%BF%83%E7%90%86%E5%92%A8%E8%AF%A2%E5%B8%88%E8%80%83%E 8%AF%95/4171156?fr=aladdin
+7、《2018 年心理咨询行业人群洞察报告》
+https://www.cbndata.com/report/1275/detail?isReading=report&page=29
+8、《心理咨询需求逐年增长：2021 年 1-8 月中国心理咨询企业大数据分析》
+https://www.fxbaogao.com/pdf?id=2854761&query=%7B%22keywords%22%3A%22%E5%BF%83%E7%90%86%E5 %92%A8%E8%AF%A2%22%7D&index=0&pid=
+9、人力资源社会保障部关于公布国家职业资格目录的通知 2017-9-12
+http://www.mohrss.gov.cn/SYrlzyhshbzb/rencaiduiwujianshe/zcwj/201709/t201709277385.html
+10、心理咨询培训市场乱象丛生学界四大权威机构严正声明
+http://news.china.com.cn/txt/2019-10/14/content_75300994.htm
+11、心理咨询师资格证考试认定取消 已获证者仍有效
+http://news.youth.cn/gn/201709/t20170917_10729356.htm#
+12、中科院严正声明背后：心理咨询行业是怎么陷入乱象的
+https://baike.baidu.com/reference/4171156/a7b5RJ7YcM4jUtb04TIEXCoNeD-W1ZQ-yfNQU9Do6J07sDsnZSb7xah YAeVM0IdhqNpvmvBvThOUfJGOnb2nFQxZ0lqgt5XEH2x_Q9bVZuqUtQ
+13、人社部印发《关于公布国家职业资格目录的通知》
+http://www.gov.cn/xinwen/2017-09/16/content_5225480.htm
+14、关于征集第三方评价机构的通告（中就培函[2018]95 号）
+http://chinajob.mohrss.gov.cn/c/2019-01-02/86172.shtml
+15、《5.27，北师大热线服务终止，长程咨询启动》
+https://mp.weixin.qq.com/s/epERzCmONqZQhmh8XO7VbA
+16、《广告中能否宣传“心理咨询师”培训？》
+https://mp.weixin.qq.com/s/zDtjVH3392xyrvz7uTIvsg
+17、职友集网站：https://www.jobui.com/salary/quanguo-xinlizixunshi/
+❖
+本文内容首发于《核真录》
+转载请联系本公众号
+原标题：《核查|心理咨询师轻松考证月入过万？真相是：国家职业资格目录已无此证》
+阅读原文
+特别声明
+本文为澎湃号作者或机构在澎湃新闻上传并发布，仅代表该作者或机构观点，不代表澎湃新闻的观点或立场，澎湃新闻仅提供信息发布平台。申请澎湃号请用电脑访问http://renzheng.thepaper.cn。
++1
+收藏
+我要举报
+#心理咨询师
+查看更多
+查看更多
+开始答题
+查看更多
+扫码下载澎湃新闻客户端
+Android版
+iPhone版
+iPad版
+关于澎湃
+加入澎湃
+联系我们
+广告合作
+法律声明
+隐私政策
+澎湃矩阵澎湃新闻微博
+澎湃新闻公众号
+澎湃新闻抖音号
+派生万物开放平台
+IP SHANGHAI
+SIXTH TONE
+新闻报料报料热线: 021-962866
+报料邮箱: news@thepaper.cn
+沪ICP备14003370号
+沪公网安备31010602000299号
+互联网新闻信息服务许可证：31120170006
+增值电信业务经营许可证：沪B2-2017116
+© 2014-2026 上海东方报业有限公司
+反馈
