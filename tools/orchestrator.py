@@ -3,7 +3,12 @@ import argparse
 import subprocess
 import signal
 import time
+import json
+import socket
+import platform
+import traceback
 from pathlib import Path
+from datetime import datetime, timezone
 
 from utils import load_state, save_state, log
 from pipeline import build_outline, write_section, assemble_report
@@ -131,27 +136,75 @@ def run_delivery(topic_dir: Path, *, status: str):
     raise RuntimeError("git delivery failed after retries")
 
 
+def _now_iso():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _git_head(root: Path):
+    try:
+        return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=str(root), text=True).strip()
+    except Exception:
+        return None
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("topic", help="Research topic")
+    parser.add_argument("--sections", type=int, default=6, help="Max sections to draft")
     args = parser.parse_args()
 
     acquire_lock()
     wd = None
+    topic_dir = None
+
+    # run meta: written to disk for post-mortem even if process gets killed.
+    run_meta = {
+        "run_id": f"run_{int(time.time())}_{os.getpid()}",
+        "topic": args.topic,
+        "pid": os.getpid(),
+        "host": socket.gethostname(),
+        "python": platform.python_version(),
+        "platform": platform.platform(),
+        "started_at": _now_iso(),
+        "repo_head": _git_head(ROOT),
+        "status": "running",
+        "phases": [],
+    }
+
+    def write_meta():
+        nonlocal run_meta, topic_dir
+        if not topic_dir:
+            return
+        try:
+            p = topic_dir / "00_Brief" / "run_meta.json"
+            p.parent.mkdir(parents=True, exist_ok=True)
+            p.write_text(json.dumps(run_meta, ensure_ascii=False, indent=2), encoding="utf-8")
+        except Exception:
+            pass
+
+    def phase(name: str, **extra):
+        run_meta["phases"].append({"name": name, "at": _now_iso(), **extra})
+        write_meta()
+
     try:
+        phase("init_topic:begin")
         topic_dir = init_topic(args.topic)
+        phase("init_topic:done", topic_dir=str(topic_dir))
+
         wd = start_watchdog()
+        phase("watchdog:started", watchdog_pid=getattr(wd, "pid", None))
 
         heartbeat("scaffolded")
+        phase("preflight")
 
         # --- Research pipeline (multi-step, non-one-shot) ---
-        # Expect user to populate 01_RawMaterials beforehand for many topics.
-        # For topics that already have materials, we proceed.
         raw_dir = topic_dir / "01_RawMaterials"
         if not raw_dir.exists() or not list(raw_dir.glob("*.md")):
             raise RuntimeError("01_RawMaterials is empty; add sources before running orchestrator")
 
+        phase("outline:begin")
         outline = build_outline(args.topic, topic_dir)
+        phase("outline:done", outline_bytes=len(outline or ""))
 
         # Derive section titles from outline headings (very simple heuristic)
         section_titles = []
@@ -159,18 +212,44 @@ def main():
             s = line.strip()
             if s.startswith("## "):
                 section_titles.append(s[3:].strip())
-        # fallback
         if not section_titles:
             section_titles = ["协议与机制", "技术实现与合约", "生态与市场", "风险与争议", "机会与行动建议"]
 
-        for title in section_titles[:6]:
+        phase("sections:begin", planned=min(args.sections, len(section_titles)))
+        for idx, title in enumerate(section_titles[: args.sections], start=1):
+            phase("section:begin", index=idx, title=title)
             write_section(args.topic, topic_dir, title, outline)
+            phase("section:done", index=idx, title=title)
+        phase("sections:done")
 
-        assemble_report(args.topic, topic_dir)
+        phase("assemble:begin")
+        report = assemble_report(args.topic, topic_dir)
+        phase("assemble:done", report_bytes=len(report or ""))
 
+        phase("delivery:begin")
         run_delivery(topic_dir, status="Done")
+        phase("delivery:done")
+
         heartbeat("done", status="done")
+        run_meta["status"] = "done"
+        run_meta["finished_at"] = _now_iso()
+        write_meta()
         log("✅ run complete")
+
+    except Exception as e:
+        # Persist error info for post-mortem.
+        run_meta["status"] = "error"
+        run_meta["finished_at"] = _now_iso()
+        run_meta["error"] = {
+            "type": type(e).__name__,
+            "message": str(e),
+            "traceback": traceback.format_exc(),
+        }
+        write_meta()
+        # Ensure global state isn't left as running.
+        heartbeat(f"error:{type(e).__name__}", status="idle")
+        raise
+
     finally:
         stop_watchdog(wd)
         release_lock()
