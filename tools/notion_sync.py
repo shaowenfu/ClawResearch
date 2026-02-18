@@ -168,8 +168,12 @@ def markdown_to_blocks(md_text: str):
             i += 1
             continue
 
+        # horizontal rule / divider
+        if s in ("---", "***", "___"):
+            blocks.append({"object": "block", "type": "divider", "divider": {}})
+
         # headings
-        if s.startswith("# "):
+        elif s.startswith("# "):
             blocks.append({"object": "block", "type": "heading_1", "heading_1": {"rich_text": parse_inline(s[2:])}})
         elif s.startswith("## "):
             blocks.append({"object": "block", "type": "heading_2", "heading_2": {"rich_text": parse_inline(s[3:])}})
