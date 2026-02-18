@@ -81,6 +81,10 @@ def distill_raw_chunks(topic: str, topic_dir: Path, chunk_paths: list[Path]) -> 
         prompt = (
             f"You are assisting a deep research report in Chinese about: {topic}.\n"
             f"Given the raw materials chunk below, produce a compact evidence memo in Chinese.\n"
+            f"Output format rules (very important):\n"
+            f"- Output ONLY Markdown content.\n"
+            f"- Do NOT wrap the answer in triple backticks (no code fences).\n"
+            f"- Do NOT include any preface like 'Sure' / 'Here is' / system logs.\n"
             f"Rules:\n"
             f"- Focus on concrete facts, mechanisms, numbers, and claims.\n"
             f"- Keep it structured with bullet points and short paragraphs.\n"
@@ -123,6 +127,10 @@ def build_outline(topic: str, topic_dir: Path) -> str:
 
     prompt = (
         f"You are writing a deep research report in Chinese about: {topic}.\n"
+        f"Output format rules (very important):\n"
+        f"- Output ONLY Markdown.\n"
+        f"- Do NOT wrap the answer in triple backticks (no code fences).\n"
+        f"- Do NOT include meta commentary or preface; start directly with the outline.\n"
         f"Given the EVIDENCE MEMOS below (distilled from raw sources), produce a detailed outline with 6-10 sections.\n"
         f"For each section, include: key questions to answer + evidence needed.\n\n"
         f"EVIDENCE MEMOS:\n{evidence}"
@@ -142,6 +150,10 @@ def write_section(topic: str, topic_dir: Path, section_title: str, outline: str)
     evidence = load_distilled_evidence(topic_dir, max_chars=90_000)
     prompt = (
         f"Write ONLY the section '{section_title}' in Chinese for a deep research report about {topic}.\n"
+        f"Output format rules (very important):\n"
+        f"- Output ONLY Markdown.\n"
+        f"- Do NOT wrap the answer in triple backticks (no code fences).\n"
+        f"- Do NOT include meta commentary or preface; start directly with the section title/content.\n"
         f"Requirements: detailed, concrete, include mechanisms, numbers when available, and cite which raw file each claim comes from (by FILE name).\n"
         f"Target length: >= 1200 Chinese characters.\n\n"
         f"OUTLINE:\n{outline}\n\nEVIDENCE MEMOS (distilled from raw sources):\n{evidence}"
@@ -174,6 +186,10 @@ def assemble_report(topic: str, topic_dir: Path):
     prompt = (
         f"Assemble a final Chinese report about {topic} with the following structure:\n"
         f"- Title\n- Executive Summary\n- Main body (integrate sections, remove repetition)\n- Risks & Open Questions\n- Actionable next steps\n\n"
+        f"Output format rules (very important):\n"
+        f"- Output ONLY Markdown.\n"
+        f"- Do NOT wrap the answer in triple backticks (no code fences).\n"
+        f"- Do NOT include meta commentary or preface; start directly with the report title.\n\n"
         f"Use the outline and section drafts below. Ensure the final report is >= 3500 Chinese characters.\n\n"
         f"OUTLINE:\n{outline}\n\nSECTION DRAFTS:\n{sections_txt}"
     )
