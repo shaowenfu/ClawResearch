@@ -7,7 +7,7 @@
   "platform": "Linux-5.10.134-19.2.al8.x86_64-x86_64-with-glibc2.32",
   "started_at": "2026-02-18T07:39:17.586264+00:00",
   "repo_head": "22f01deca0fe3de2c2f87267cbb3bcb00e282e4b",
-  "status": "running",
+  "status": "done",
   "phases": [
     {
       "name": "init_topic:begin",
@@ -117,6 +117,11 @@
     {
       "name": "delivery:begin",
       "at": "2026-02-18T07:46:52.004590+00:00"
+    },
+    {
+      "name": "delivery:done",
+      "at": "2026-02-18T07:46:56.194981+00:00"
     }
-  ]
+  ],
+  "finished_at": "2026-02-18T07:46:56.195573+00:00"
 }
