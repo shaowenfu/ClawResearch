@@ -1,0 +1,122 @@
+{
+  "run_id": "run_1771400357_480690",
+  "topic": "湖南永州：室内粉刷匠低成本转型适老化改造（零经验起步）",
+  "pid": 480690,
+  "host": "iZ0xidw4wwqv6sln7jql4gZ",
+  "python": "3.11.13",
+  "platform": "Linux-5.10.134-19.2.al8.x86_64-x86_64-with-glibc2.32",
+  "started_at": "2026-02-18T07:39:17.586264+00:00",
+  "repo_head": "22f01deca0fe3de2c2f87267cbb3bcb00e282e4b",
+  "status": "running",
+  "phases": [
+    {
+      "name": "init_topic:begin",
+      "at": "2026-02-18T07:39:17.588503+00:00"
+    },
+    {
+      "name": "init_topic:done",
+      "at": "2026-02-18T07:39:17.619737+00:00",
+      "topic_dir": "/home/admin/clawd/research/Topics/t20260218-10aa306d"
+    },
+    {
+      "name": "watchdog:started",
+      "at": "2026-02-18T07:39:17.620656+00:00",
+      "watchdog_pid": 480743
+    },
+    {
+      "name": "preflight",
+      "at": "2026-02-18T07:39:17.621127+00:00"
+    },
+    {
+      "name": "outline:begin",
+      "at": "2026-02-18T07:39:17.621583+00:00"
+    },
+    {
+      "name": "outline:done",
+      "at": "2026-02-18T07:40:16.863405+00:00",
+      "outline_bytes": 3145
+    },
+    {
+      "name": "sections:begin",
+      "at": "2026-02-18T07:40:16.863701+00:00",
+      "planned": 5
+    },
+    {
+      "name": "section:begin",
+      "at": "2026-02-18T07:40:16.863914+00:00",
+      "index": 1,
+      "title": "协议与机制"
+    },
+    {
+      "name": "section:done",
+      "at": "2026-02-18T07:40:49.669683+00:00",
+      "index": 1,
+      "title": "协议与机制"
+    },
+    {
+      "name": "section:begin",
+      "at": "2026-02-18T07:40:49.669961+00:00",
+      "index": 2,
+      "title": "技术实现与合约"
+    },
+    {
+      "name": "section:done",
+      "at": "2026-02-18T07:41:32.462697+00:00",
+      "index": 2,
+      "title": "技术实现与合约"
+    },
+    {
+      "name": "section:begin",
+      "at": "2026-02-18T07:41:32.462975+00:00",
+      "index": 3,
+      "title": "生态与市场"
+    },
+    {
+      "name": "section:done",
+      "at": "2026-02-18T07:42:47.899012+00:00",
+      "index": 3,
+      "title": "生态与市场"
+    },
+    {
+      "name": "section:begin",
+      "at": "2026-02-18T07:42:47.899284+00:00",
+      "index": 4,
+      "title": "风险与争议"
+    },
+    {
+      "name": "section:done",
+      "at": "2026-02-18T07:43:31.651195+00:00",
+      "index": 4,
+      "title": "风险与争议"
+    },
+    {
+      "name": "section:begin",
+      "at": "2026-02-18T07:43:31.651469+00:00",
+      "index": 5,
+      "title": "机会与行动建议"
+    },
+    {
+      "name": "section:done",
+      "at": "2026-02-18T07:43:58.616992+00:00",
+      "index": 5,
+      "title": "机会与行动建议"
+    },
+    {
+      "name": "sections:done",
+      "at": "2026-02-18T07:43:58.617293+00:00"
+    },
+    {
+      "name": "assemble:begin",
+      "at": "2026-02-18T07:43:58.617508+00:00"
+    },
+    {
+      "name": "assemble:done",
+      "at": "2026-02-18T07:46:52.004331+00:00",
+      "report_bytes": 12295
+    },
+    {
+      "name": "delivery:begin",
+      "at": "2026-02-18T07:46:52.004590+00:00"
+    }
+  ]
+}
